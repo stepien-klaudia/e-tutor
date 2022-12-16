@@ -15,8 +15,8 @@ class AddPhoneNumberAndSurname extends Migration
     {
         Schema::table('users', function(Blueprint $table)
         {
-            $table -> string('surname')->after('name');
-            $table -> string('phone_number')->after('surname');
+            $table -> string('surname')->after('name')->nullable();
+            $table -> string('phone_number',20)->after('surname')->nullable();
         });
     }
 
@@ -29,8 +29,7 @@ class AddPhoneNumberAndSurname extends Migration
     {
         Schema::table('users', function(Blueprint $table)
         {
-            $table -> dropColumn('surname');
-            $table -> dropColumn('phone_number');
+            $table -> dropColumn('surname', 'phone_number');
         });
     }
 }
