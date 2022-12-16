@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/hello', [HelloController::class, 'show']);
 
-Route::get('/users/list', [HelloController::class, 'show']);
+Route::get('/users/list', [UserController::class, 'index']);
 
 Auth::routes();
 
