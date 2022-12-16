@@ -3,6 +3,7 @@
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\Kernel;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,7 @@ Route::get('/', function () {
 
 Route::get('/hello', [HelloController::class, 'show']);
 
-Route::get('/users/list', [UserController::class, 'index']);
+Route::get('/users/list', [UserController::class, 'index'])->middleware('auth');
 
 Auth::routes();
 
