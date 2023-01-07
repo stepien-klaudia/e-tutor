@@ -55,6 +55,7 @@ class RegisterController extends Controller
             'surname'=> ['required','alpha','max : 80'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8','regex:/[a-z]/','regex:/[A-Z]/','regex:/[0-9]/','regex:/[@$!%*#?&]/', 'confirmed'],
+            'g-recaptcha-response' => 'required|captcha',
         ]);
     }
 
