@@ -23,7 +23,7 @@
             <td>{{ $user->phone_number}}</td>
             <td>
                 <button class = "btn btn-danger btn-sm delete_user" data-id = "{{$user->id}}" >
-                    X
+                    Usuń
                 </button>
             </td>
         </tr>
@@ -37,16 +37,19 @@
 @section('javascript')
     $(function(){
         $('.delete_user').click(function(){
-            $.ajax({
+            if(confirm('Naciśnij OK aby usunąć użytkownika'))
+            {
+                $.ajax({
                 method:"DELETE",
                 url:"http://e-tutor.test/users/" + $(this).data("id")
-            })
-            .done(function(){
-                alert("Data Saved");
-            })
-            .fail(function(){
-                alert("ERROR");
-            });
+                })
+                .done(function(){
+                    alert("Data Saved");
+                })
+                .fail(function(){
+                    alert("ERROR");
+                });
+            }
         });
     });
 @endsection
