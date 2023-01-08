@@ -21,11 +21,32 @@
             <td>{{ $user->name }}</td>
             <td>{{ $user->surname}}</td>
             <td>{{ $user->phone_number}}</td>
-            <td></td>
+            <td>
+                <button class = "btn btn-danger btn-sm delete_user" data-id = "{{$user->id}}" >
+                    X
+                </button>
+            </td>
         </tr>
         @endforeach
         </tbody>
     </table>
     {{ $users->links() }}
 </div>
+@endsection
+
+@section('javascript')
+    $(function(){
+        $('.delete_user').click(function(){
+            $.ajax({
+                method:"DELETE",
+                url:"http://e-tutor.test/users/" + $(this).data("id")
+            })
+            .done(function(){
+                alert("Data Saved");
+            })
+            .fail(function(){
+                alert("ERROR");
+            });
+        });
+    });
 @endsection
