@@ -66,7 +66,7 @@ class AnnouncementController extends Controller
     public function edit(Announcement $announcement):View
     {
         return view('anouncements\edit',
-                    ['anouncements'=>$announcement]);
+                    ['anouncements'=>$announcement],['categories'=>AnnouncementCategory::all()]);
     }
 
     /**

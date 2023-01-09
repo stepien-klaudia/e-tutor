@@ -41,6 +41,14 @@
 
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="category" class="col-md-4 col-form-label text-md-right">Przedmiot</label>
+
+                            <div class="col-md-6">
+                                <input id="category" type="text" class="form-control " name="category" value="@if(!is_null($anouncements -> category)){{ $anouncements -> category->name}} @else Brak @endif" disabled>
+
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>

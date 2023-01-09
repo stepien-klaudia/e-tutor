@@ -71,8 +71,8 @@
                             <label for="category" class="col-md-4 col-form-label text-md-right">Przedmiot</label>
 
                             <div class="col-md-6">
-                                <select id="category_id" class="form-control @error('category_id') is-invalid @enderror" name="category_id" required >
-                                <option value = "NULL">Brak</option>
+                                <select id="category_id" class="form-control @error('category_id') is-invalid @enderror" name="category_id">
+                                <option value = "">Brak</option>
                                 @foreach($categories as $category)    
                                     <option value="{{$category->id}}">{{$category -> name}}</option>
                                 @endforeach
