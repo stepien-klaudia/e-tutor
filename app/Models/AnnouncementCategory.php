@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Model;
 
-class Announcement extends Model
+class AnnouncementCategory extends Model
 {
     use HasFactory;
 
@@ -15,16 +15,13 @@ class Announcement extends Model
      *
      * @var array<int, string>
      */
+
     protected $fillable = [
-        'name',
-        'description',
-        'place',
-        'price',
-        'category_id',
+        'name'
     ];
 
-    public function category():BelongsTo
+    public function announcements():HasMany
     {
-        return $this->belongsTo(AnnouncementCategory::class);
+        return $this->hasMany(Announcement::class);
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Announcement;
+use App\Models\AnnouncementCategory;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Contracts\View\View;
@@ -27,7 +28,8 @@ class AnnouncementController extends Controller
      */
     public function create():View
     {
-        return view('anouncements\create');
+        return view('anouncements\create',
+        ['categories'=>AnnouncementCategory::all()]);
     }
 
     /**
