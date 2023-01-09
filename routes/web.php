@@ -4,6 +4,7 @@ use App\Http\Controllers\HelloController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\Kernel;
 
@@ -18,14 +19,12 @@ use App\Http\Middleware\Kernel;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/hello', [HelloController::class, 'show']);
 
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->middleware('auth');
 Route::get('/users/list', [UserController::class, 'index'])->middleware('auth');
+
+Route::get('/', [WelcomeController::class, 'index']);
 
 Route::get('/announcements', [AnnouncementController::class, 'index'])->name('announcement_index')->middleware('auth');
 Route::get('/announcements/create', [AnnouncementController::class, 'create'])->name('announcement_create')->middleware('auth');
