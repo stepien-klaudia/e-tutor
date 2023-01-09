@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container pt-5">
+<div class="container pt-5" >
               <div class="row">
                 <div class="col-md-8 order-md-2 col-lg-9">
                   <div class="container-fluid">
@@ -77,7 +77,7 @@
                     </div>
                   </div>
                 </div><div class="col-md-4 order-md-1 col-lg-3 sidebar-filter">
-                  <h3 class="mt-0 mb-5">Ogłoszenia <span class="text-primary">{{count($announcements)}}</span> </h3>
+                  <h3 class="mt-0 mb-5">Ogłoszenia <span class="text" style = "color:#00c2e4">{{count($announcements)}}</span> </h3>
                   <h6 class="text-uppercase font-weight-bold mb-3">Przedmioty</h6>
                   <div class="mt-2 mb-2 pl-2">
                     <div class="custom-control custom-checkbox">
