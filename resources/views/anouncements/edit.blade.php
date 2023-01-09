@@ -84,6 +84,24 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="level" class="col-md-4 col-form-label text-md-right">Poziom nauczania</label>
+
+                            <div class="col-md-6">
+                                <select id="level_id" class="form-control @error('level_id') is-invalid @enderror" name="level_id">
+                                <option value = ''>Brak</option>
+                                @foreach($levels as $level)    
+                                    <option value="{{$level->id}}" @if(!is_null($anouncements->level)&&($anouncements->level->id==$level->id)) selected @endif>{{$level -> name}}</option>
+                                @endforeach
+                                </select>
+
+                                @error('level_id')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

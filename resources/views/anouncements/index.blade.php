@@ -24,6 +24,7 @@
                     <th scope="col">Miejsce</th>
                     <th scope="col">Cena</th>
                     <th scope="col">Przedmiot</th>
+                    <th scope="col">Poziom nauczania</th>
                     <th scope="col">Akcje</th>
                 </tr>
             </thead>
@@ -36,6 +37,7 @@
                 <td>{{ $anouncement -> place}}</td>
                 <td>{{ $anouncement -> price}}</td>
                 <td>@if(!is_null($anouncement -> category)){{ $anouncement -> category->name}}@endif</td>
+                <td>@if(!is_null($anouncement -> level)){{ $anouncement -> level->name}}@endif</td>
                 <td>
                     <a href = "{{route('announcement_show',$anouncement->id)}}">
                         <button class = "btn btn-success btn-sm">

@@ -49,6 +49,14 @@
 
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="level" class="col-md-4 col-form-label text-md-right">Poziom nauczania</label>
+
+                            <div class="col-md-6">
+                                <input id="level" type="text" class="form-control " name="level" value="@if(!is_null($anouncements -> level)){{ $anouncements -> level->name}} @else Brak @endif" disabled>
+
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>

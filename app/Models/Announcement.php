@@ -21,10 +21,16 @@ class Announcement extends Model
         'place',
         'price',
         'category_id',
+        'level_id',
     ];
 
     public function category():BelongsTo
     {
         return $this->belongsTo(AnnouncementCategory::class);
+    }
+
+    public function level():BelongsTo
+    {
+        return $this->belongsTo(AnnouncementLevel::class);
     }
 }

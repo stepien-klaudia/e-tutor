@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Announcement;
 use App\Models\AnnouncementCategory;
+use App\Models\AnnouncementLevel;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Contracts\View\View;
@@ -29,7 +30,8 @@ class AnnouncementController extends Controller
     public function create():View
     {
         return view('anouncements\create',
-        ['categories'=>AnnouncementCategory::all()]);
+        ['categories'=>AnnouncementCategory::all(),
+    'levels'=>AnnouncementLevel::all()]);
     }
 
     /**
@@ -66,7 +68,8 @@ class AnnouncementController extends Controller
     public function edit(Announcement $announcement):View
     {
         return view('anouncements\edit',
-                    ['anouncements'=>$announcement],['categories'=>AnnouncementCategory::all()]);
+                    ['anouncements'=>$announcement],['categories'=>AnnouncementCategory::all(),
+                    'levels'=>AnnouncementLevel::all()]);
     }
 
     /**

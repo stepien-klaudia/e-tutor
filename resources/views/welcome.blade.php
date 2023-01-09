@@ -33,7 +33,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="row">
+                    <div class="row" id = "announcements-wrapper">
                         @foreach($announcements as $announcement)
                             <div class="col-6 col-md-6 col-lg-4 mb-3">
                                 <div class="card h-100 border-0">
@@ -76,100 +76,50 @@
                       </div>
                     </div>
                   </div>
-                </div><div class="col-md-4 order-md-1 col-lg-3 sidebar-filter">
+                </div>
+                <form class="col-md-4 order-md-1 col-lg-3 sidebar-filter">
                   <h3 class="mt-0 mb-5">Ogłoszenia <span class="text" style = "color:#00c2e4">{{count($announcements)}}</span> </h3>
                   <h6 class="text-uppercase font-weight-bold mb-3">Przedmioty</h6>
+                  @foreach($categories as $category)
                   <div class="mt-2 mb-2 pl-2">
+                    
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="category-1">
-                      <label class="custom-control-label" for="category-1">Matematyka</label>
+                      <input type="checkbox" class="custom-control-input" name ="filter[categories][]" id="category-{{$category->id}}" value = "{{$category->id}}">
+                      <label class="custom-control-label" for="category-{{$category->id}}">{{$category->name}}</label>
                     </div>
+                    
                   </div>
-                  <div class="mt-2 mb-2 pl-2">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="category-2">
-                      <label class="custom-control-label" for="category-2">Fizyka</label>
-                    </div>
-                  </div>
-                  <div class="mt-2 mb-2 pl-2">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="category-3">
-                      <label class="custom-control-label" for="category-3">Język angielski</label>
-                    </div>
-                  </div>
-                  <div class="mt-2 mb-2 pl-2">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="category-4">
-                      <label class="custom-control-label" for="category-4">Język niemiecki</label>
-                    </div>
-                  </div>
-                  <div class="mt-2 mb-2 pl-2">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="category-5">
-                      <label class="custom-control-label" for="category-5">Chemia</label>
-                    </div>
-                  </div>
-                  <div class="mt-2 mb-2 pl-2">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="category-6">
-                      <label class="custom-control-label" for="category-6">Język polski</label>
-                    </div>
-                  </div>
-                  <div class="mt-2 mb-2 pl-2">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="category-7">
-                      <label class="custom-control-label" for="category-7">Inne</label>
-                    </div>
-                  </div>
+                  @endforeach
                   <div class="divider mt-5 mb-5 border-bottom border-secondary"></div>
-                  <h6 class="text-uppercase mt-5 mb-3 font-weight-bold">Miasto</h6>
+                  <h6 class="text-uppercase mt-5 mb-3 font-weight-bold">Poziom nauczania</h6>
+                  @foreach($levels as $level)
                   <div class="mt-2 mb-2 pl-2">
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="city-1">
-                      <label class="custom-control-label" for="city-1">Zdalnie</label>
+                      <input type="checkbox" class="custom-control-input" name = "filter[levels][]" id="level-{{$level->id}}" value = "{{$level->id}}">
+                      <label class="custom-control-label" for="level-{{$level->id}}">{{$level->name}}</label>
                     </div>
                   </div>
-                  <div class="mt-2 mb-2 pl-2">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="city-2">
-                      <label class="custom-control-label" for="city-2">Rzeszów</label>
-                    </div>
-                  </div>
-                  <div class="mt-2 mb-2 pl-2">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="city-3">
-                      <label class="custom-control-label" for="city-3">Kraków</label>
-                    </div>
-                  </div>
-                  <div class="mt-2 mb-2 pl-2">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="city-4">
-                      <label class="custom-control-label" for="city-4">Wrocław</label>
-                    </div>
-                  </div>
-                  <div class="mt-2 mb-2 pl-2">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="city-5">
-                      <label class="custom-control-label" for="city-5">Warszawa</label>
-                    </div>
-                  </div>
-                  <div class="mt-2 mb-2 pl-2">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="city-6">
-                      <label class="custom-control-label" for="city-6">Inne</label>
-                    </div>
+                  @endforeach
+                  <div class="divider mt-5 mb-5 border-bottom border-secondary"></div>
+                  <h6 class="text-uppercase mt-5 mb-3 font-weight-bold">Miejsce</h6>
+                  <div class="place-filter-control">
+                    <input type="text" name = "filter[place]" class="form-control w-70 pull-left mb-2" placeholder="Zdalnie" id="place">
                   </div>
                   <div class="divider mt-5 mb-5 border-bottom border-secondary"></div>
                   <h6 class="text-uppercase mt-5 mb-3 font-weight-bold">Cena</h6>
                   <div class="price-filter-control">
-                    <input type="number" class="form-control w-50 pull-left mb-2" value="50" id="price-min-control">
-                    <input type="number" class="form-control w-50 pull-right" value="150" id="price-max-control">
+                    <input type="number" name = "filter[price_min]" class="form-control w-50 pull-left mb-2" placeholder="50" id="price-min-control">
+                    <input type="number" name = "filter[price_max]" class="form-control w-50 pull-right" placeholder="150" id="price-max-control">
                   </div>
                   <input id="ex2" type="text" class="slider " value="50,150" data-slider-min="10" data-slider-max="200" data-slider-step="5" data-slider-value="[50,150]" data-value="50,150" style="display: none;">
                   <div class="divider mt-5 mb-5 border-bottom border-secondary"></div>
-                  <a href="#" class="btn btn-lg btn-block btn-primary mt-5">Zastosuj</a>
-                </div>
+                  <a href="#" class="btn btn-lg btn-block btn-primary mt-5" id = "filter-button">Zastosuj</a>
+                </form>
 
               </div>
             </div>
+  @endsection
+
+  @section('js-files')
+        <script src = "{{ asset('js/welcome.js')}}"></script>
   @endsection
