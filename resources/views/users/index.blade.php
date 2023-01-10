@@ -10,6 +10,7 @@
                 <th scope="col">Imie</th>
                 <th scope="col">Nazwisko</th>
                 <th scope="col">Numer Telefonu</th>
+                <th scope="col">Rola</th>
                 <th scope="col">Akcje</th>
             </tr>
         </thead>
@@ -21,10 +22,16 @@
             <td>{{ $user->name }}</td>
             <td>{{ $user->surname}}</td>
             <td>{{ $user->phone_number}}</td>
+            <td>{{ $user->role}}</td>
             <td>
                 <button class = "btn btn-danger btn-sm delete_user" data-id = "{{$user->id}}" >
                     Usuń
                 </button>
+                <a href = "{{route('users.edit',$user)}}">
+                    <button class = "btn btn-warning btn-sm"  >
+                        Zmień range
+                    </button>
+                </a>
             </td>
         </tr>
         @endforeach
@@ -49,7 +56,8 @@
                 .fail(function(){
                     alert("ERROR");
                 });
-            }
+            };
+            document.location.reload();
         });
     });
 @endsection

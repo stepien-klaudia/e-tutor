@@ -24,7 +24,9 @@ use App\Http\Middleware\Kernel;
 Route::get('/hello', [HelloController::class, 'show']);
 
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->middleware('can:isAdmin');
-Route::get('/users/list', [UserController::class, 'index'])->middleware('can:isAdmin');
+Route::get('/users/list', [UserController::class, 'index'])->name('users.index')->middleware('can:isAdmin');
+Route::get('/users/edit/{user}', [UserController::class, 'edit'])->name('users.edit')->middleware('can:isAdmin');
+Route::post('/users/{user}', [UserController::class, 'update'])->name('users.update')->middleware('can:isAdmin');
 
 Route::get('/', [WelcomeController::class, 'index']);
 

@@ -59,9 +59,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        return view('users\edit',
+                    ['user'=>$user,'roles'=>['admin','user']]);
     }
 
     /**
@@ -71,9 +72,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $user->fill($request->all());
+        $user->save();
+        return redirect(route('users.index'));
     }
 
     /**
