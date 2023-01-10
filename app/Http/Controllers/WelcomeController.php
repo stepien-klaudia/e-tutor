@@ -23,7 +23,6 @@ class WelcomeController extends Controller
         $filters = $request->query('filter');
         $paginate = $request->query('paginate') ?? 5;
         $query = Announcement::query();
-        $query->paginate($paginate);
         if(!is_null($filters)){
             if(array_key_exists('categories',$filters))
             {
@@ -48,15 +47,13 @@ class WelcomeController extends Controller
             $query = $query->where('price','<=',$filters['price_max']);
             }
 
-            return response()->json([
-                'data' => $query->get()
-            ]);
+            return response()->json($query->paginate($paginate));
         };
 
 
 
         return view('welcome',
-                    ['announcements'=> $query-> get(),
+                    ['announcements'=> $query-> paginate($paginate),
                 'categories'=>AnnouncementCategory::orderBy('name','ASC')->get(),
             'levels'=>AnnouncementLevel::orderBy('name','ASC')->get()]);
     }

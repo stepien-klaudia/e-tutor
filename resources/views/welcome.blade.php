@@ -23,7 +23,7 @@
                         </div>
                         <div class="dropdown float-right">
                           <label class="mr-2">Ogłoszeń na stronie:</label>
-                          <a class="btn btn-lg btn-light dropdown-toggle anouncement-actual-count" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">5 <span class="caret"></span></a>
+                          <a class="btn btn-lg btn-light dropdown-toggle anouncement-actual-count" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">5<span class="caret"></span></a>
                           <div class="dropdown-menu anouncement-count" aria-labelledby="navbarDropdown" x-placement="bottom-end" style="will-change: transform; position: absolute; transform: translate3d(120px, 48px, 0px); top: 0px; left: 0px;">
                             <a class="dropdown-item" href="#">5</a>
                             <a class="dropdown-item" href="#">10</a>
@@ -66,7 +66,7 @@
                     </div>
                     <div class="dropdown float-md-right">
                           <label class="mr-2">Ogłoszeń na stronie:</label>
-                          <a class="btn btn-light btn-lg dropdown-toggle anouncement-actual-count" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> 5<span class="caret"></span></a>
+                          <a class="btn btn-light btn-lg dropdown-toggle anouncement-actual-count" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">5<span class="caret"></span></a>
                           <div class="dropdown-menu anouncement-count" aria-labelledby="navbarDropdown">
                           <a class="dropdown-item" href="#">5</a>
                             <a class="dropdown-item" href="#">10</a>

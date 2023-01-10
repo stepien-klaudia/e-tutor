@@ -6,7 +6,7 @@ $(function(){
     });
     $('a#filter-button').click(function(event){
         event.preventDefault();
-        getAnnouncements($('a.anouncement-actual-count').text());
+        getAnnouncements($('a.anouncement-actual-count').first().text());
     });
     function getAnnouncements(paginate){
         const form = $('form.sidebar-filter').serialize();
