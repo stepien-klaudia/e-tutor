@@ -46,9 +46,6 @@ $(function(){
                             '</div>';
                     $('div#announcements-wrapper').append(html);
                 });
-            })
-            .fail(function(){
-                alert("ERROR");
             });
     }
 })
