@@ -22,6 +22,7 @@ class Announcement extends Model
         'price',
         'category_id',
         'level_id',
+        'user_id',
     ];
 
     public function category():BelongsTo
@@ -32,5 +33,10 @@ class Announcement extends Model
     public function level():BelongsTo
     {
         return $this->belongsTo(AnnouncementLevel::class);
+    }
+
+    public function user():BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 }

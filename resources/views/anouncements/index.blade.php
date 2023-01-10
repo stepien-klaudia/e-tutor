@@ -15,13 +15,6 @@
         <div class = "col-6">
             <h1>Lista ogłoszeń</h1>
         </div>
-        <div class = "col-6">
-            <a class = "float-right" href = "{{route('announcement_create')}}">
-                <button type="button" class = "btn btn-primary">
-                    Dodaj ogłoszenie
-                </button>
-            </a>
-        </div>
     </div>
     <div class = "row">
         <table class="table table-hover">
@@ -34,6 +27,7 @@
                     <th scope="col">Cena</th>
                     <th scope="col">Przedmiot</th>
                     <th scope="col">Poziom nauczania</th>
+                    <th scope="col">Użytkownik</th>
                     <th scope="col">Akcje</th>
                 </tr>
             </thead>
@@ -47,6 +41,7 @@
                 <td>{{ $anouncement -> price}}</td>
                 <td>@if(!is_null($anouncement -> category)){{ $anouncement -> category->name}}@endif</td>
                 <td>@if(!is_null($anouncement -> level)){{ $anouncement -> level->name}}@endif</td>
+                <td>{{ $anouncement -> user -> email}}</td>
                 <td>
                     <a href = "{{route('announcement_show',$anouncement->id)}}">
                         <button class = "btn btn-success btn-sm">

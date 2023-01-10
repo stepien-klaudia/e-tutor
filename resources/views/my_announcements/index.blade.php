@@ -38,7 +38,7 @@
                 </tr>
             </thead>
             <tbody>
-            @foreach($anouncements as $anouncement)
+            @foreach($my_announcements as $anouncement)
             <tr>
                 <th scope="row">{{ $anouncement->id }}</th>
                 <td>{{ $anouncement->name }}</td>
@@ -53,7 +53,7 @@
                             Pokaż
                         </button>
                     </a>
-                    <a href = "{{route('announcement_edit',$anouncement->id)}}">
+                    <a href = "{{route('my_announcements.edit',$anouncement->id)}}">
                         <button class = "btn btn-warning btn-sm">
                             Edytuj
                         </button>
@@ -66,7 +66,7 @@
             @endforeach
             </tbody>
         </table>
-        {{ $anouncements->links() }}
+        {{ $my_announcements->links() }}
     </div>
 </div>
 @endsection
@@ -74,11 +74,11 @@
 @section('javascript')
     $(function(){
         $('.delete_a').click(function(){
-            if(confirm('Naciśnij OK aby usunąć użytkownika'))
+            if(confirm('Naciśnij OK aby usunąć ogłoszenie'))
             {
                 $.ajax({
                 method:"DELETE",
-                url:"http://e-tutor.test/announcements/del/" + $(this).data("id")
+                url:"http://e-tutor.test/my_announcements/del/" + $(this).data("id")
                 })
                 .done(function(){
                     alert("Data Saved");

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 class AnnouncementController extends Controller
 {
@@ -44,8 +45,9 @@ class AnnouncementController extends Controller
     public function store(Request $request):RedirectResponse
     {
         $announcement = new Announcement($request->all());
+        $announcement -> user_id = Auth::user()->id;
         $announcement -> save();
-        return redirect(route('announcement_index'))->with('status', 'Ogłoszenie zostało zapisane');
+        return redirect(route('my_announcements.index'))->with('status', 'Ogłoszenie zostało zapisane');
     }
 
     /**
