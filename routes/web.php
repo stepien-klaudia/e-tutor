@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserDataController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\MyAnnouncementsController;
@@ -39,6 +40,11 @@ Route::get('/my_announcements', [MyAnnouncementsController::class, 'index'])->na
 Route::get('/my_announcements/edit/{my_announcement}', [MyAnnouncementsController::class, 'edit'])->name('my_announcements.edit')->middleware('auth');
 Route::post('/my_announcements/{my_announcement}', [MyAnnouncementsController::class, 'update'])->name('my_announcements.update')->middleware('auth');
 Route::delete('/my_announcements/del/{my_announcement}', [MyAnnouncementsController::class, 'destroy'])->middleware('auth');
+
+Route::get('/my_account/{user}', [UserDataController::class, 'show'])->name('my_account.show')->middleware('auth');
+Route::get('/my_account/edit/{user}', [UserDataController::class, 'edit'])->name('my_account.edit')->middleware('auth');
+Route::post('/my_account/{user}', [UserDataController::class, 'update'])->name('my_account.update')->middleware('auth');
+Route::delete('/my_account/del/{user}', [UserDataController::class, 'destroy'])->middleware('auth');
 
 Auth::routes();
 

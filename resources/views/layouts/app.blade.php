@@ -58,6 +58,7 @@
                                         <a class="dropdown-item" style = "color:red; font-weight:bold;" href = "/users/list">Użytkownicy</a>
                                         <a class="dropdown-item" style = "color:red; font-weight:bold;" href = "{{route('announcement_index')}}">Ogłoszenia</a>
                                     @endcan
+                                    <a class="dropdown-item" href = "{{route('my_account.show',Auth::user())}}">Moje konto</a>
                                     <a class="dropdown-item" href = "{{route('my_announcements.index')}}">Moje ogłoszenia</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
