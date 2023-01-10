@@ -3,6 +3,15 @@
 @section('content')
 <div class = "container">
     <div class = "row">
+        <div class = "col-12">
+            @if (session('status'))
+            <div class="aletr alert-success">
+                {{session('status')}}
+            </div>
+            @endif
+        </div>
+    </div>
+    <div class = "row">
         <div class = "col-6">
             <h1>Lista ogłoszeń</h1>
         </div>
@@ -73,9 +82,6 @@
                 })
                 .done(function(){
                     alert("Data Saved");
-                })
-                .fail(function(){
-                    alert("ERROR");
                 });
             }
         });

@@ -8,6 +8,7 @@ use App\Models\AnnouncementLevel;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Session;
 
 class AnnouncementController extends Controller
 {
@@ -44,7 +45,7 @@ class AnnouncementController extends Controller
     {
         $announcement = new Announcement($request->all());
         $announcement -> save();
-        return redirect(route('announcement_index'));
+        return redirect(route('announcement_index'))->with('status', 'Ogłoszenie zostało zapisane');
     }
 
     /**
@@ -83,17 +84,18 @@ class AnnouncementController extends Controller
     {
         $announcement->fill($request->all());
         $announcement->save();
-        return redirect(route('announcement_index'));
+        return redirect(route('announcement_index'))->with('status','Ogłoszenie zostało zaktualizowane');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Announcement  $announcement
-     * @return \Illuminate\Http\Response
+     * @param  Announcement  $announcement
+     * @return RedirectResponse
      */
-    public function destroy(Announcement $announcement)
+    public function destroy(Announcement $announcement):RedirectResponse
     {
-        $announcement->delete();
+            $announcement->delete();
+            Session::flash('status','Ogłoszenie zostało usunięte');
     }
 }
