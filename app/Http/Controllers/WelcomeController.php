@@ -21,7 +21,9 @@ class WelcomeController extends Controller
     public function index(Request $request)
     {
         $filters = $request->query('filter');
+        $paginate = $request->query('paginate') ?? 5;
         $query = Announcement::query();
+        $query->paginate($paginate);
         if(!is_null($filters)){
             if(array_key_exists('categories',$filters))
             {
@@ -54,7 +56,7 @@ class WelcomeController extends Controller
 
 
         return view('welcome',
-                    ['announcements'=> $query-> paginate(10),
+                    ['announcements'=> $query-> get(),
                 'categories'=>AnnouncementCategory::orderBy('name','ASC')->get(),
             'levels'=>AnnouncementLevel::orderBy('name','ASC')->get()]);
     }

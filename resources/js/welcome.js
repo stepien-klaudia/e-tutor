@@ -1,10 +1,19 @@
 $(function(){
-    $('a#filter-button').click(function(){
+    $('div.anouncement-count a').click(function(event){
+        event.preventDefault();
+        $('a.anouncement-actual-count').text($(this).text());
+        getAnnouncements($(this).text());
+    });
+    $('a#filter-button').click(function(event){
+        event.preventDefault();
+        getAnnouncements($('a.anouncement-actual-count').text());
+    });
+    function getAnnouncements(paginate){
         const form = $('form.sidebar-filter').serialize();
         $.ajax({
             method:"GET",
             url:"http://e-tutor.test/",
-            data: form
+            data: form + "&"+$.param({paginate:paginate})
             })
             .done(function(response){
                 $('div#announcements-wrapper').empty();
@@ -17,14 +26,20 @@ $(function(){
                                 '</div>\n'+
                                 '<div class="card-body text-center">\n'+
                                     '<h4 class="card-title">\n'+
+                                    '<a href="product.html" class=" font-weight-bold text-dark text-uppercase small"> '+
                                         announcement.name +
+                                        '</a>'+
                                     '</h4>\n'+
                                     '<h5 class="font-weight-bold text-dark ">\n'+
+                                    '<i>'+
                                         announcement.place +
+                                        '</i>'+
                                     '</h5>\n'+
                                     '<h5 class="card-price small text-dark ">\n'+
+                                    '<i>'+
                                     announcement.price +
                                     'zł/godz.'+
+                                    '</i>'+
                                     '</h5>\n'+
                                 '</div>\n'+
                             '</div>'+
@@ -35,5 +50,5 @@ $(function(){
             .fail(function(){
                 alert("ERROR");
             });
-    })
+    }
 })

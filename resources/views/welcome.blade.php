@@ -9,7 +9,7 @@
                       <div class="col-12">
                         <div class="dropdown text-md-left text-center float-md-left mb-3 mt-3 mt-md-0 mb-md-0">
                           <label class="mr-2">Sortowanie:</label>
-                          <a class="btn btn-lg btn-light dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Relevance <span class="caret"></span></a>
+                          <a class="btn btn-lg btn-light dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="caret">Trafność</span></a>
                           <div class="dropdown-menu" aria-labelledby="navbarDropdown" x-placement="bottom-start" style="position: absolute; transform: translate3d(71px, 48px, 0px); top: 0px; left: 0px; will-change: transform;">
                             <a class="dropdown-item" href="#">Trafność</a>
                             <a class="dropdown-item" href="#">Cena rosnąco</a>
@@ -17,19 +17,18 @@
                             <a class="dropdown-item" href="#">Popularność</a>
                           </div>
                         </div>
-                        <div class="btn-group float-md-right ml-3">
+                        <div class="btn-group">
                           <button type="button" class="btn btn-lg btn-light"> <span class="fa fa-arrow-left"></span> </button>
                           <button type="button" class="btn btn-lg btn-light"> <span class="fa fa-arrow-right"></span> </button>
                         </div>
                         <div class="dropdown float-right">
                           <label class="mr-2">Ogłoszeń na stronie:</label>
-                          <a class="btn btn-lg btn-light dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">9 <span class="caret"></span></a>
-                          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" x-placement="bottom-end" style="will-change: transform; position: absolute; transform: translate3d(120px, 48px, 0px); top: 0px; left: 0px;">
-                            <a class="dropdown-item" href="#">12</a>
-                            <a class="dropdown-item" href="#">24</a>
-                            <a class="dropdown-item" href="#">48</a>
-                            <a class="dropdown-item" href="#">96</a>
-                          </div>
+                          <a class="btn btn-lg btn-light dropdown-toggle anouncement-actual-count" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">5 <span class="caret"></span></a>
+                          <div class="dropdown-menu anouncement-count" aria-labelledby="navbarDropdown" x-placement="bottom-end" style="will-change: transform; position: absolute; transform: translate3d(120px, 48px, 0px); top: 0px; left: 0px;">
+                            <a class="dropdown-item" href="#">5</a>
+                            <a class="dropdown-item" href="#">10</a>
+                            <a class="dropdown-item" href="#">15</a>
+                            <a class="dropdown-item" href="#">20</a>                          </div>
                         </div>
                       </div>
                     </div>
@@ -59,22 +58,22 @@
                       <div class="col-12">
                         <a class="btn btn-light">
                           <i class="fas fa-arrow-up mr-2"></i> Do góry</a>
-                        <div class="btn-group float-md-right ml-3">
+                        <div class="btn-group">
                           <button type="button" class="btn btn-lg btn-light"> <span class="fa fa-arrow-left"></span> </button>
                           <button type="button" class="btn btn-lg btn-light"> <span class="fa fa-arrow-right"></span> </button>
                         </div>
-                        <div class="dropdown float-md-right">
-                          <label class="mr-2">View:</label>
-                          <a class="btn btn-light btn-lg dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">12 <span class="caret"></span></a>
-                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">12</a>
-                            <a class="dropdown-item" href="#">24</a>
-                            <a class="dropdown-item" href="#">48</a>
-                            <a class="dropdown-item" href="#">96</a>
-                          </div>
-                        </div>
                       </div>
                     </div>
+                    <div class="dropdown float-md-right">
+                          <label class="mr-2">Ogłoszeń na stronie:</label>
+                          <a class="btn btn-light btn-lg dropdown-toggle anouncement-actual-count" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> 5<span class="caret"></span></a>
+                          <div class="dropdown-menu anouncement-count" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#">5</a>
+                            <a class="dropdown-item" href="#">10</a>
+                            <a class="dropdown-item" href="#">15</a>
+                            <a class="dropdown-item" href="#">20</a>
+                          </div>
+                        </div>
                   </div>
                 </div>
                 <form class="col-md-4 order-md-1 col-lg-3 sidebar-filter">
