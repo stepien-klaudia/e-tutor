@@ -1,3 +1,5 @@
+const { get } = require("jquery");
+
 $(function(){
     $('div.anouncement-count a').click(function(event){
         event.preventDefault();
@@ -26,7 +28,9 @@ $(function(){
                                 '</div>\n'+
                                 '<div class="card-body text-center">\n'+
                                     '<h4 class="card-title">\n'+
-                                    '<a href="product.html" class=" font-weight-bold text-dark text-uppercase small"> '+
+                                    '<a href=\"\/announcements\/'+
+                                    announcement.id +
+                                    '\" class=" font-weight-bold text-dark text-uppercase small"> '+
                                         announcement.name +
                                         '</a>'+
                                     '</h4>\n'+
