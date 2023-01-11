@@ -4,7 +4,7 @@
 <div class="container">
     <div class="team-single">
         <div class="row">
-            <div class="col-lg-4 col-md-5 xs-margin-30px-bottom">
+            <div class="col-lg-4 col-md-5 xs-margin-30px-bottom border-width" style = "border: 2px solid grey;">
                 <div class="bg-light-gray padding-30px-all md-padding-25px-all sm-padding-20px-all text-center">
                     <h4 class="margin-10px-bottom font-size24 md-font-size22 sm-font-size20 font-weight-600">Korepetytor</h4>
                     <p class="sm-width-95 sm-margin-auto">Skontaktuj się z korepetytorem korzystając z następujących danych.</p>
