@@ -21,7 +21,6 @@ use App\Http\Middleware\Kernel;
 |
 */
 
-Route::get('/hello', [HelloController::class, 'show']);
 
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->middleware('can:isAdmin');
 Route::get('/users/list', [UserController::class, 'index'])->name('users.index')->middleware('can:isAdmin');
