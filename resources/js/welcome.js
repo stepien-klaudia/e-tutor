@@ -49,6 +49,7 @@ $(function(){
                             '</div>'+
                             '</div>';
                     $('div#announcements-wrapper').append(html);
+                   
                 });
             });
     }

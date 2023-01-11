@@ -16,7 +16,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-8 col-md-7">
+            <div class="col-lg-8 col-md-7 text-left">
                 <div class="team-single-text padding-50px-left sm-no-padding-left">
                     <div class = "row">
                     <h4 class="font-size38 sm-font-size32 xs-font-size30" style = "font-weight:bold;">{{$anouncements -> name}} &emsp;</h4>
