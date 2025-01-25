@@ -1,5 +1,6 @@
 const { get } = require("jquery");
 
+
 $(function(){
     $('div.anouncement-count a').click(function(event){
         event.preventDefault();
